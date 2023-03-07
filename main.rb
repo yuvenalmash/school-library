@@ -1,31 +1,33 @@
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'capitalize_decorator'
+require_relative 'trimmer_decorator'
 
-person1 = Student.new(12, 'grade 6', 'Peter', false)
-person2 = Student.new(18, 'grade 6', 'George')
-person3 = Student.new(32, 'grade 6', 'Andrea', false)
-person4 = Teacher.new(40, 'Math', 'Robert')
-person5 = Teacher.new(35, 'Math', 'Maria')
+student1 = Student.new(13, 'Maths', 'anna', parent_permission: false)
+student2 = Student.new(20, 'Maths', 'Maximilianus')
+teacher1 = Teacher.new(40, 'Maths', 'julie')
+teacher2 = Teacher.new(17, 'Maths', 'Peter', parent_permission: false)
 
-p person1.name
-p person2.age
-p person3.id
-p person4
-p person5
+p student1.name
+p student2.age
+p teacher1.id
+p teacher2
 
-# person1.speak
-# person2.speak
-# person3.speak
-# person4.speak
-# person5.speak
+p student1.can_use_services?
+p student2.can_use_services?
+p teacher1.can_use_services?
+p teacher2.can_use_services?
 
-# person1.play_hooky
-# person2.play_hooky
-# person3.play_hooky
-# person4.play_hooky
-# person5.play_hooky
+p student1.play_hooky
 
-p person1.can_use_services?
-p person2.can_use_services?
-p person3.can_use_services?
-p person4.can_use_services?
+capitalize_student = CapitalizeDecorator.new(student1)
+p capitalize_student.correct_name
+
+capitalize_teacher = CapitalizeDecorator.new(teacher1)
+p capitalize_teacher.correct_name
+
+trimmer_student = TrimmerDecorator.new(student2)
+p trimmer_student.correct_name
+
+trimmer_teacher = TrimmerDecorator.new(teacher2)
+p trimmer_teacher.correct_name
