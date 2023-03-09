@@ -41,22 +41,22 @@ p trimmer_teacher.correct_name
 classroom1.add_student(student1)
 classroom1.add_student(student2)
 
-book_1 = Book.new('Book 1', 'Author 1')
-book_2 = Book.new('Book 2', 'Author 2')
-book_3 = Book.new('Book 3', 'Author 3')
-book_4 = Book.new('Book 4', 'Author 4')
-rental_1 = Rental.new('2021-01-01', book_1, student1)
-rental_3 = Rental.new('2021-01-03', book_3, student1)
+book1 = Book.new('Book 1', 'Author 1')
+book2 = Book.new('Book 2', 'Author 2')
+book3 = Book.new('Book 3', 'Author 3')
+book4 = Book.new('Book 4', 'Author 4')
+Rental.new('2021-01-01', book1, student1)
+Rental.new('2021-01-03', book3, student1)
 puts student1.rentals.count
-puts student1.rentals.map { |rental| rental.book.title }
-puts book_1.rentals.length
-book_1.add_rental(student2, '2021-01-04')
-rental_3 = Rental.new('2021-01-05', book_3, student2)
-student2.add_rental(book_4, '2021-01-05')
-book_2.add_rental(student2, '2021-01-05')
-puts "book_2 rented #{book_2.rentals.length} times"
+puts(student1.rentals.map { |rental| rental.book.title })
+puts book1.rentals.length
+book1.add_rental(student2, '2021-01-04')
+Rental.new('2021-01-05', book3, student2)
+student2.add_rental(book4, '2021-01-05')
+book2.add_rental(student2, '2021-01-05')
+puts "book_2 rented #{book2.rentals.length} times"
 puts student2.rentals.length
-puts student2.rentals.map { |rental| rental.book.title }
+puts(student2.rentals.map { |rental| rental.book.title })
 student1.add_to_classroom(classroom1)
 puts "#{classroom1.label} has #{classroom1.students.count} students"
 puts "#{classroom2.label} has #{classroom2.students.count} students"
