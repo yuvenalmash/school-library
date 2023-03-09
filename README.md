@@ -13,20 +13,16 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -39,28 +35,19 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
   <summary>Backend</summary>
   <ul>
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
 
-- **[Add new students or teachers]**
-- **[Add new books]**
-- **[Save records of who borrowed a given book and when]**
+- **Add new students or teachers**
+- **Add new books**
+- **Save records of who borrowed a given book and when**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,7 +84,15 @@ Install this project with:
 
 ```sh
   $ cd school-library
-  $ gem install
+  $ bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  $ ruby main
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -121,7 +116,7 @@ Install this project with:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[Add a front end]**
+- [ ] **Add a front end**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +124,7 @@ Install this project with:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/yuvenalmash/school-library/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
