@@ -2,6 +2,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
+require 'pry'
 
 class App
   def initialize
@@ -12,7 +13,6 @@ class App
 
   def run
     puts 'Welcome to School Library App!'
-
     loop do
       home_page
     end
@@ -94,7 +94,7 @@ class App
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.upcase == 'Y'
     classroom = 'Class A'
-    student = Student.new(age, classroom, name, parent_permission: parent_permission)
+    student = Student.new(age, classroom, name, parent_permission)
     @people << student
     puts 'Student created successfully'
   end
@@ -108,7 +108,7 @@ class App
 
     print 'Specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(age, specialization, name, parent_permission: true)
+    teacher = Teacher.new(age, specialization, name)
     @people << teacher
     puts 'Teacher created successfully'
   end
