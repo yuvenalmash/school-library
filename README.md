@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>School Library</b></h3>
+  <h3><b>School Library(Buggy branch)</b></h3>
 
 </div>
 
@@ -92,7 +92,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  $ ruby main
+  $ ./main
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
