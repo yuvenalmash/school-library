@@ -10,32 +10,32 @@ class App
     @rentals = []
   end
 
-  def run
-    puts 'Welcome to School Library App!'
+  # def run
+  #   puts 'Welcome to School Library App!'
 
-    loop do
-      home_page
-    end
-  end
+  #   loop do
+  #     home_page
+  #   end
+  # end
 
-  def home_page
-    puts [
-      '',
-      'Please choose an option by entering a number:',
-      '1 - List all books',
-      '2 - List all people',
-      '3 - Create a person',
-      '4 - Create a book',
-      '5 - Create a rental',
-      '6 - List all rentals for a given person\'s id',
-      '7 - Exit',
-      ''
-    ]
-    print 'Enter your choice: '
-    input = gets.chomp
-    close if input == '7'
-    home_page_selection(input)
-  end
+  # def home_page
+  #   puts [
+  #     '',
+  #     'Please choose an option by entering a number:',
+  #     '1 - List all books',
+  #     '2 - List all people',
+  #     '3 - Create a person',
+  #     '4 - Create a book',
+  #     '5 - Create a rental',
+  #     '6 - List all rentals for a given person\'s id',
+  #     '7 - Exit',
+  #     ''
+  #   ]
+  #   print 'Enter your choice: '
+  #   input = gets.chomp
+  #   close if input == '7'
+  #   home_page_selection(input)
+  # end
 
   def home_page_selection(input)
     case input
