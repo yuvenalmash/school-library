@@ -10,25 +10,6 @@ class App
     @rentals = []
   end
 
-  def home_page_selection(input)
-    case input
-    when '1'
-      list_all_books
-    when '2'
-      list_all_people
-    when '3'
-      create_person
-    when '4'
-      create_book
-    when '5'
-      create_rental
-    when '6'
-      list_persons_rentals
-    else
-      puts 'Invalid input, please try again'
-    end
-  end
-
   def list_all_books
     puts 'List of all books:'
     @books.each do |book|
@@ -70,7 +51,6 @@ class App
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
     @people << student
     puts 'Student created successfully'
-    puts @people
   end
 
   def create_teacher

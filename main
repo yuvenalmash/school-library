@@ -1,16 +1,16 @@
 require_relative 'app'
 
-class Main  
-  
+class Main
+
   def run
     puts 'Welcome to School Library App!'
-    
+    app=App.new
     loop do
-      home_page
+      home_page(app)
     end
   end
 
-  def home_page
+  def home_page(app)
     puts [
       '',
       'Please choose an option by entering a number:',
@@ -25,9 +25,27 @@ class Main
     ]
     print 'Enter your choice: '
     input = gets.chomp
-    app = App.new
     close if input == '7'
-    app.home_page_selection(input)
+    home_page_selection(input, app)
+  end
+
+  def home_page_selection(input, app)
+    case input
+    when '1'
+      app.list_all_books
+    when '2'
+      app.list_all_people
+    when '3'
+      app.create_person
+    when '4'
+      app.create_book
+    when '5'
+      app.create_rental
+    when '6'
+      app.list_persons_rentals
+    else
+      puts 'Invalid input, please try again'
+    end
   end
 
   def close
