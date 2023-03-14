@@ -25,6 +25,14 @@ class App
     end
   end
 
+  def Store_books
+    file = File.read('./books.json')
+    books = JSON.parse(file)
+    books.each do |book|
+      @books << Book.new(book['title'], book['author'])
+    end
+  end
+
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     input = gets.chomp

@@ -5,6 +5,7 @@ class Main
   def run
     puts 'Welcome to School Library App!'
     app=App.new
+    app.Store_books
     loop do
       home_page(app)
     end
