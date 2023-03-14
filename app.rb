@@ -5,10 +5,13 @@ require_relative 'rental'
 require 'json'
 
 class App
-  def initialize
+  attr_accessor :people, :books, :rentals
+
+  def initialize(people_raw, books_raw, rentals_raw)
     @people = []
     @books = []
     @rentals = []
+    convert_raw_data(people_raw, books_raw, rentals_raw)
   end
 
   def list_all_books
@@ -22,14 +25,6 @@ class App
     puts 'List of all people:'
     @people.each do |person|
       puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-  end
-
-  def Store_books
-    file = File.read('./books.json')
-    books = JSON.parse(file)
-    books.each do |book|
-      @books << Book.new(book['title'], book['author'])
     end
   end
 
@@ -122,16 +117,41 @@ class App
     end
   end
 
-  def save
-    convert_book = @books.map do |book|
-      {
-        title: book.title,
-        author: book.author
-      }
+  def convert_raw_data(people_raw, books_raw, rentals_raw)
+    convert_raw_people(people_raw)
+    convert_raw_books(books_raw)
+    convert_raw_rentals(rentals_raw)
+  end
+
+  def convert_raw_people(people_raw)
+    people_raw.each do |person|
+      person = JSON.parse(person)
+      @people << case person['type']
+                 when 'Student'
+                   Student.new(person['age'], person['classroom'], person['name'],
+                               parent_permission: person['parent_permission'])
+                 when 'Teacher'
+                   Teacher.new(person['age'], person['specialization'], person['name'], parent_permission: true)
+                 end
     end
-    file = File.open('./books.json', 'w')
-      books = JSON.dump(convert_book)
-      file.puts(books)
-      file.close
+  end
+
+  def convert_raw_books(books_raw)
+    books_raw.each do |book|
+      book = JSON.parse(book)
+      @books << Book.new(book['title'], book['author'])
+    end
+  end
+
+  def convert_raw_rentals(rentals_raw)
+    rentals_raw.each do |rental|
+      rental = JSON.parse(rental)
+      book = JSON.parse(rental['book'])
+      person = JSON.parse(rental['person'])
+      book = @books.find { |b| b.title == book['title'] && b.author == book['author'] }
+      person = @people.find { |p| p.name == person['name'] && p.age == person['age'] }
+
+      @rentals << Rental.new(rental['date'], book, person)
+    end
   end
 end
