@@ -26,7 +26,7 @@ class Main
     ]
     print 'Enter your choice: '
     input = gets.chomp
-    close if input == '7'
+    close if input == '8'
     home_page_selection(input, app)
   end
 

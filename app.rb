@@ -122,7 +122,7 @@ class App
       }
     end
     file = File.open('./books.json', 'w')
-      books = JSON.generate(convert_book)
+      books = JSON.dump(convert_book)
       file.puts(books)
       file.close
   end
