@@ -2,6 +2,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
+require 'json'
 
 class App
   def initialize
@@ -111,5 +112,18 @@ class App
     @rentals.each do |rental|
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
     end
+  end
+
+  def save
+    convert_book = @books.map do |book|
+      {
+        title: book.title,
+        author: book.author
+      }
+    end
+    file = File.open('./books.json', 'w')
+      books = JSON.generate(convert_book)
+      file.puts(books)
+      file.close
   end
 end

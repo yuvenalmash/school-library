@@ -19,8 +19,9 @@ class Main
       '3 - Create a person',
       '4 - Create a book',
       '5 - Create a rental',
-      '6 - List all rentals for a given person\'s id',
-      '7 - Exit',
+      '6 - Save data to file',
+      '7 - List all rentals for a given person\'s id',
+      '8 - Exit',
       ''
     ]
     print 'Enter your choice: '
@@ -42,6 +43,8 @@ class Main
     when '5'
       app.create_rental
     when '6'
+      app.save
+    when '7'
       app.list_persons_rentals
     else
       puts 'Invalid input, please try again'
