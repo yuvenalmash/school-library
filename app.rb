@@ -10,52 +10,6 @@ class App
     @rentals = []
   end
 
-  def run
-    puts 'Welcome to School Library App!'
-
-    loop do
-      home_page
-    end
-  end
-
-  def home_page
-    puts [
-      '',
-      'Please choose an option by entering a number:',
-      '1 - List all books',
-      '2 - List all people',
-      '3 - Create a person',
-      '4 - Create a book',
-      '5 - Create a rental',
-      '6 - List all rentals for a given person\'s id',
-      '7 - Exit',
-      ''
-    ]
-    print 'Enter your choice: '
-    input = gets.chomp
-    close if input == '7'
-    home_page_selection(input)
-  end
-
-  def home_page_selection(input)
-    case input
-    when '1'
-      list_all_books
-    when '2'
-      list_all_people
-    when '3'
-      create_person
-    when '4'
-      create_book
-    when '5'
-      create_rental
-    when '6'
-      list_persons_rentals
-    else
-      puts 'Invalid input, please try again'
-    end
-  end
-
   def list_all_books
     puts 'List of all books:'
     @books.each do |book|
@@ -156,17 +110,6 @@ class App
     puts 'Rentals:'
     @rentals.each do |rental|
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
-    end
-  end
-
-  def close
-    puts 'Are you sure you want to exit? [Y/N]'
-    input = gets.chomp.upcase
-    if input == 'Y'
-      puts 'Thank you for using this app!'
-      exit
-    else
-      home_page
     end
   end
 end
