@@ -28,6 +28,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  json (~> 2.6, >= 2.6.3)
   rubocop (>= 1.0, < 2.0)
 
 BUNDLED WITH
