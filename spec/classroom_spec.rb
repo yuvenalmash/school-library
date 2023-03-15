@@ -1,4 +1,4 @@
-require_relative './classroom'
+require_relative '../classroom'
 
 
 describe 'Unit Test of classroom' do
