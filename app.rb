@@ -2,12 +2,16 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
+require 'json'
 
 class App
-  def initialize
+  attr_accessor :people, :books, :rentals
+
+  def initialize(people_raw, books_raw, rentals_raw)
     @people = []
     @books = []
     @rentals = []
+    convert_raw_data(people_raw, books_raw, rentals_raw)
   end
 
   def list_all_books
@@ -110,6 +114,44 @@ class App
     puts 'Rentals:'
     @rentals.each do |rental|
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    end
+  end
+
+  def convert_raw_data(people_raw, books_raw, rentals_raw)
+    convert_raw_people(people_raw)
+    convert_raw_books(books_raw)
+    convert_raw_rentals(rentals_raw)
+  end
+
+  def convert_raw_people(people_raw)
+    people_raw.each do |person|
+      person = JSON.parse(person)
+      @people << case person['type']
+                 when 'Student'
+                   Student.new(person['age'], person['classroom'], person['name'],
+                               parent_permission: person['parent_permission'])
+                 when 'Teacher'
+                   Teacher.new(person['age'], person['specialization'], person['name'], parent_permission: true)
+                 end
+    end
+  end
+
+  def convert_raw_books(books_raw)
+    books_raw.each do |book|
+      book = JSON.parse(book)
+      @books << Book.new(book['title'], book['author'])
+    end
+  end
+
+  def convert_raw_rentals(rentals_raw)
+    rentals_raw.each do |rental|
+      rental = JSON.parse(rental)
+      book = JSON.parse(rental['book'])
+      person = JSON.parse(rental['person'])
+      book = @books.find { |b| b.title == book['title'] && b.author == book['author'] }
+      person = @people.find { |p| p.name == person['name'] && p.age == person['age'] }
+
+      @rentals << Rental.new(rental['date'], book, person)
     end
   end
 end
