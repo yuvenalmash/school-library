@@ -1,6 +1,5 @@
 require_relative '../classroom'
 
-
 describe 'Unit Test of classroom' do
   it 'should return the label of the classroom' do
     classroom1 = Classroom.new('Class A')

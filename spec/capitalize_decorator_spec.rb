@@ -6,6 +6,6 @@ describe 'Unit Test of capitalize_decorator' do
   end
 
   it 'should return NotImplementedError' do
-    expect{@capitalize_decorator.correct_name}.to raise_error(NotImplementedError)
+    expect { @capitalize_decorator.correct_name }.to raise_error(NotImplementedError)
   end
 end

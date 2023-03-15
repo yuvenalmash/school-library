@@ -6,6 +6,6 @@ describe 'Unit Test of nameable' do
   end
 
   it 'should return NotImplementedError' do
-    expect {@nameable.correct_name}.to raise_error(NotImplementedError)
+    expect { @nameable.correct_name }.to raise_error(NotImplementedError)
   end
 end

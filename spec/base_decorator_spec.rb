@@ -6,6 +6,6 @@ describe 'Unit Test of base_decorator' do
   end
 
   it 'should return NotImplementedError' do
-    expect{@base_decorator.correct_name}.to raise_error(NotImplementedError)
+    expect { @base_decorator.correct_name }.to raise_error(NotImplementedError)
   end
 end

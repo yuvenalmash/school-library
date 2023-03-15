@@ -1,10 +1,9 @@
 require_relative '../student'
 require_relative '../classroom'
 
-
 describe 'Unit Test of student' do
   before(:each) do
-    @student = Student.new(25,'Class A','John Doe')
+    @student = Student.new(25, 'Class A', 'John Doe')
   end
 
   it 'should return the name of the student' do
@@ -28,7 +27,7 @@ describe 'Unit Test of student' do
   end
 
   it 'should return false if not of_age and parent_permission' do
-    @student = Student.new(15,'John Doe',parent_permission:false)
+    @student = Student.new(15, 'John Doe', parent_permission: false)
     expect(@student.can_use_services?).to eql(false)
   end
 

@@ -2,7 +2,7 @@ require_relative '../person'
 
 describe 'Unit Test of person' do
   before(:each) do
-    @person = Person.new(25,'John Doe')
+    @person = Person.new(25, 'John Doe')
   end
 
   it 'should return the name of the person' do
@@ -22,7 +22,7 @@ describe 'Unit Test of person' do
   end
 
   it 'should return false if not of_age and parent_permission' do
-    @person = Person.new(15,'John Doe',parent_permission:false)
+    @person = Person.new(15, 'John Doe', parent_permission: false)
     expect(@person.can_use_services?).to eql(false)
   end
 
