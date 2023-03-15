@@ -1,19 +1,16 @@
 require_relative 'app'
-require_relative 'file_management'
 
 class Main
-
   def run
-    file_mgt= FileManagment.new
-    people, books, rentals = file_mgt.load_from_files
-    app=App.new(people,books,rentals)
+    app = App.new()
+    app.load_data
     puts 'Welcome to School Library App!'
     loop do
-      home_page(app, file_mgt)
+      home_page(app)
     end
   end
 
-  def home_page(app, file_mgt)
+  def home_page(app)
     puts [
       '',
       'Please choose an option by entering a number:',
@@ -28,7 +25,7 @@ class Main
     ]
     print 'Enter your choice: '
     input = gets.chomp
-    close(app, file_mgt) if input == '7'
+    close(app) if input == '7'
     home_page_selection(input, app)
   end
 
@@ -45,24 +42,21 @@ class Main
     when '5'
       app.create_rental
     when '6'
-      app.list_persons_rentals
+      app.list_all_rentals_for_person_id
     else
       puts 'Invalid input, please try again'
     end
   end
 
-  def close (app, file_mgt)
+  def close(app)
     puts 'Are you sure you want to exit? [Y/N]'
     input = gets.chomp.upcase
     if input == 'Y'
-      file_mgt.save_to_files(app.books,app.people,app.rentals)
+      app.save_data
       puts 'Thank you for using this app!'
       exit
-    else
-      home_page(app, file_mgt)
     end
   end
-
 end
 
 main = Main.new
