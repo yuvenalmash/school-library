@@ -38,4 +38,9 @@ describe 'Unit Test of student' do
   it 'check the be_instance_of student' do
     expect(@student).to be_instance_of(Student)
   end
+
+  it 'should add student to the classroom' do
+    classrooml = Classroom.new('Class A')
+    expect(@student.add_to_classroom(classrooml)).to eql([@student]) 
+  end
 end
