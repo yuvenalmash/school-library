@@ -18,4 +18,10 @@ describe 'Unit Test of book' do
   it 'check the be_instance_of book' do
     expect(@book).to be_instance_of(Book)
   end
+
+  it 'should return the rental book' do
+    person = Student.new(18, 'Class A', 'John Doe')
+    rental = Rental.new('2020-01-01', @book, person)
+    expect(@book.rentals).to eql([rental])
+  end
 end
