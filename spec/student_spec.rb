@@ -41,6 +41,6 @@ describe 'Unit Test of student' do
 
   it 'should add student to the classroom' do
     classrooml = Classroom.new('Class A')
-    expect(@student.add_to_classroom(classrooml)).to eql([@student]) 
+    expect(@student.add_to_classroom(classrooml)).to eql([@student])
   end
 end
