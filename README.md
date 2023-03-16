@@ -117,6 +117,12 @@ To run the tests, execute the following command:
 - Twitter: [@_Juvenal_](https://twitter.com/_Juvenal_)
 - LinkedIn: [Yuvenal Njoroge](https://linkedin.com/in/yuvenal-njoroge)
 
+👤 **Hassaan Baig**
+
+- GitHub: [@githubhandle](https://github.com/Hassaanjbaig-code)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/hassaan-jawwad-baig)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
