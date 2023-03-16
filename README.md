@@ -18,6 +18,7 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -95,6 +96,14 @@ To run the project, execute the following command:
   $ ruby main
 ```
 
+### Run tests
+
+To run the tests, execute the following command:
+
+```sh
+  $ rspec
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -107,6 +116,12 @@ To run the project, execute the following command:
 - GitHub: [@yuvenalmash](https://github.com/yuvenalmash)
 - Twitter: [@_Juvenal_](https://twitter.com/_Juvenal_)
 - LinkedIn: [Yuvenal Njoroge](https://linkedin.com/in/yuvenal-njoroge)
+
+👤 **Hassaan Baig**
+
+- GitHub: [@githubhandle](https://github.com/Hassaanjbaig-code)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/hassaan-jawwad-baig)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
