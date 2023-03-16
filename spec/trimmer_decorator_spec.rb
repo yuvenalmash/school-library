@@ -12,8 +12,8 @@ describe 'Unit Test of trimmer_decorator' do
   end
 
   it 'should return the trim name' do
-  person = Person.new(25, 'John Doe')
-  trim = TrimmerDecorator.new(person)
-  expect(trim.correct_name).to eql('John Doe')
+    person = Person.new(25, 'John Doe')
+    trim = TrimmerDecorator.new(person)
+    expect(trim.correct_name).to eql('John Doe')
   end
 end
