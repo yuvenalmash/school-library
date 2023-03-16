@@ -1,6 +1,7 @@
-require_relative './student'
-require_relative './rental'
-require_relative './book'
+require_relative '../teacher'
+require_relative '../student'
+require_relative '../rental'
+require_relative '../book'
 
 describe 'Unit Test of rental' do
   before(:each) do

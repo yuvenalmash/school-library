@@ -1,5 +1,4 @@
-require_relative './classroom'
-
+require_relative '../classroom'
 
 describe 'Unit Test of classroom' do
   it 'should return the label of the classroom' do

@@ -1,4 +1,4 @@
-require_relative './teacher'
+require_relative '../teacher'
 
 describe '#teacher' do
   context 'when the teacher is created' do
